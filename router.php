@@ -1,6 +1,7 @@
 <?php
 require_once './app/controllers/product.controller.php';
 require_once './app/controllers/user.controller.php';
+require_once './app/controllers/category.controller.php';
 
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
 
@@ -13,6 +14,7 @@ $params = explode('/', $action);
 
 $productsController = new ProductController();
 $loginController = new UserController();
+$categoryController = new CategoryController();
 
 switch ($params[0]) {
     case 'login':
@@ -36,7 +38,10 @@ switch ($params[0]) {
         break;     
     case 'showProducts': 
         $productsController->showProducts();
-        break;    
+        break; 
+    case 'showCategories': 
+        $categoryController->showCategories();
+        break;       
 
     // case 'delete':
     //     $id = $params[1];

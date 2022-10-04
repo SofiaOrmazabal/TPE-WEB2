@@ -17,16 +17,16 @@ class ProductModel {
         return $product;
     }
 
-    public function insertTask($description, $price, $size, $id_category) {
-        $query = $this->db->prepare("INSERT INTO task (descripcion, price, size, id_category) VALUES (?, ?, ?, ?)");
-        $query->execute([$description, $price, $size, $id_category]);
+    // public function insertTask($description, $price, $size, $id_category) {
+    //     $query = $this->db->prepare("INSERT INTO task (descripcion, price, size, id_category) VALUES (?, ?, ?, ?)");
+    //     $query->execute([$description, $price, $size, $id_category]);
 
-        return $this->db->lastInsertId();
-    }
+    //     return $this->db->lastInsertId();
+    // }
 
-    function deleteTaskById($id) {
-        $query = $this->db->prepare('DELETE FROM product WHERE id = ?');
-        $query->execute([$id]);
-    }
+    // function deleteTaskById($id) {
+    //     $query = $this->db->prepare('DELETE FROM product WHERE id = ?');
+    //     $query->execute([$id]);
+    // }
 
 }
