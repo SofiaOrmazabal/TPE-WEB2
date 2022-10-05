@@ -5,7 +5,7 @@
     <ul>
         {foreach from=$categories item=$category}
             <li>
-                {$category->name}<a href="viewCategory/{$category->id_category}">VER MÁS</a>       
+                {$category->name}<a href="viewcategory/{$category->id_category}">VER MÁS</a>       
             </li>
         {/foreach}
     </ul>

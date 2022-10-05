@@ -41,8 +41,13 @@ switch ($params[0]) {
         break; 
     case 'showCategories': 
         $categoryController->showCategories();
-        break;       
-
+        break;
+    case 'viewproduct': 
+        $productsController->detailProduct($params[1]);
+        break; 
+    case 'viewcategory': 
+        $productsController->productsFromCategory($params[1]);
+        break;             
     // case 'delete':
     //     $id = $params[1];
     //     $taskController->deleteTask($id);

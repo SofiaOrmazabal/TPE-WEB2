@@ -6,16 +6,24 @@ class ProductController {
     private $model;
     private $view;
 
-    public function __construct() {
+    function __construct() {
         $this->model = new ProductModel();
         $this->view = new ProductView();
     }
 
-    public function showProducts() {
+    function showProducts() {
         $products = $this->model->getAllProducts();
         $this->view->showProducts($products);
     }
 
+    function detailProduct($id){
+        $detail = $this->model->detailProduct($id);
+        $this->view->detailProduct($detail);
+    }
+    function productsFromCategory($id){
+        $detail = $this->model-> productsFromCategory($id);
+        $this->view->productsFromCategory($detail);
+    }
     
 
 

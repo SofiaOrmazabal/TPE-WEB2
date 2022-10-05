@@ -17,13 +17,6 @@ class CategoryModel {
         return $categories;
     }
 
-//     $query = $db->prepare('SELECT * FROM Products WHERE Product = ?');
-//    $query->execute([$transaction->Product]);
-//    $product = $query->fetch(PDO::FETCH_OBJ);
-//    echo '<li>' . $transaction->Channel . ', ' . $transaction->Product 
-//    . ', ' . $transaction->Price . ', ' . $product->Material . ', ' . 
-//    $product->Medium . '</li>';
-
 }
 
 
