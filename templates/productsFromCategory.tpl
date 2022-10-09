@@ -9,6 +9,6 @@
         </li>
     {/foreach}
 </ul>
-</div>
+<a href="showCategories" > Volver atrás </a>
 
 {include file="footer.tpl"}

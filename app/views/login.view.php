@@ -11,7 +11,7 @@ class LoginView{
 
     function showLogin($error = ""){
         $this->smarty->assign('titulo', 'Log In');   
-        $this->smarty->assign('error', $error);      
+        $this->smarty->assign('error', $error);     
         $this->smarty->display('templates/login.tpl');
     }
 
@@ -26,7 +26,8 @@ class LoginView{
     function adminLogin(){
         header("Location: ".BASE_URL."adminHome");
     }
-    function adminHome(){
+    function adminHome( $categories ){
+        $this->smarty->assign('categories', $categories);     
         $this->smarty->display('templates/adminHome.tpl');  
     }
 }

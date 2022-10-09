@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 {include file="nav.tpl"}
 <div>
-    <h1>LOG IN</h1>
+    <h2>LOG IN</h2>
     <p>Acceso ADMINISTRADOR</p>
     <form action="verify" method="POST">
         <label for="user">Ingrese usuario</label><input type="text" name="user" placeholder="mail">

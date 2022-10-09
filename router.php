@@ -47,12 +47,26 @@ switch ($params[0]) {
         break; 
     case 'viewcategory': 
         $productsController->productsFromCategory($params[1]);
-        break;             
-    // case 'delete':
-    //     $id = $params[1];
-    //     $taskController->deleteTask($id);
-    //     break;
-    // default:
-    //     echo('404 Page not found');
-    //     break;
+        break;  
+    case 'insert': 
+        $productsController->insertProduct();
+        break;  
+    case 'showProductsAdmin':
+        $productsController->showProductsAdmin();
+        break;                 
+    case 'delete':
+        $id = $params[1];
+        $productsController->deleteProduct($id);
+        break;
+    case 'editForm':
+        $id = $params[1];
+        $productsController->formEditProduct($id);
+        break;
+    case 'edit':
+        $id = $params[1];
+        $productsController->editProduct($id);
+        break;    
+    default:
+        echo('404 Page not found');
+        break;
 }

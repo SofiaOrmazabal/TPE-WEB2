@@ -16,4 +16,5 @@ class CategoryController {
         $this->view->showCategories($categories);
     }
 
+
 }    

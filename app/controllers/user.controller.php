@@ -1,6 +1,7 @@
 <?php
 require_once "./app/models/user.model.php";
 require_once "./app/views/login.view.php";
+require_once './app/models/category.model.php';
 
 class UserController {
 
@@ -9,6 +10,7 @@ class UserController {
 
     function __construct(){
         $this->model = new UserModel();
+        $this->modelCategory = new CategoryModel();
         $this->view = new LoginView();
     }
 
@@ -31,6 +33,7 @@ class UserController {
             if ($user && password_verify($password, $user->password)) {
                 session_start();
                 $_SESSION["user"] = $email;
+
                 $this->view->adminLogin();//me tiene que redirigir a la parte que el admin puede editar
             } else {
                 $this->view->showLogin("Acceso denegado");
@@ -44,7 +47,8 @@ class UserController {
             $email = $_POST['userNew'];
             $password = password_hash($_POST['passwordNew'], PASSWORD_BCRYPT);
             $this->model->newAdmin($email, $password);
-            $this->view->adminHome();
+            $categories = $this->modelCategory->getAllCategories();
+            $this->view->adminHome($categories);
         }   
         }
     
@@ -53,7 +57,8 @@ class UserController {
     }   
     
     function adminHome() {
-        $this->view->adminHome();
+        $categories = $this->modelCategory->getAllCategories();
+        $this->view->adminHome($categories);
     } 
     
     function adminLogin() {
