@@ -16,7 +16,7 @@
     </tr>     
 </table>
             
-<a href="publicHome" > Volver al menú </a>
+<a href="showProductsAdmin" > Volver al menú </a>
 
 
 {include file="footer.tpl"}

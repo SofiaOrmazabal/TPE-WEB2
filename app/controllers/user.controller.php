@@ -2,16 +2,19 @@
 require_once "./app/models/user.model.php";
 require_once "./app/views/login.view.php";
 require_once './app/models/category.model.php';
+require_once './app/helpers/AuthHelper.php';
 
 class UserController {
 
     private $model;
     private $view;
+    private $authHelper;
 
     function __construct(){
         $this->model = new UserModel();
         $this->modelCategory = new CategoryModel();
         $this->view = new LoginView();
+        $this->authHelper = new AuthHelper();
     }
 
 
@@ -58,6 +61,7 @@ class UserController {
     }   
     
     function adminHome() {
+        $this->authHelper->checkLoggedIn();
         $categories = $this->modelCategory->getAllCategories();
         $this->view->adminHome($categories);
     } 

@@ -20,7 +20,12 @@ a:hover{
     color: rgb(241, 52, 14);
 }
 .linkVer{
-    font-size: inherit;
+    font-size: 15px;
+    margin: 0.25cm;
+    border: solid 1px;
+    color:black;
+    padding: 0.10cm;
+    text-decoration: none;
 }
 
 form{
@@ -28,6 +33,7 @@ form{
 }
 li{
     list-style: none;
+    margin: 0.30cm;
 }
 table {
     width: 60%;

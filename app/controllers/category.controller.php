@@ -32,7 +32,32 @@ class CategoryController {
     function showCategoriesAdmin() {
         $this->authHelper->checkLoggedIn();
         $categories = $this->model->getAllCategories();
-        $this->view->showProductsAdmin($categories);
-    }        
+        $this->view->showCategoriesAdmin($categories);
+    } 
+    
+    function deleteCategory($id) {
+        $this->authHelper->checkLoggedIn();
+        $this->model->deleteCategory($id);
+        header("Location: " . BASE_URL.'showCategoriesAdmin');
+    }
+    
+    function formEditCategory($id) {
+        $this->authHelper->checkLoggedIn();
+        $detailCategory = $this->model->idCategory($id);
+        $this->view->formEditCategory($detailCategory);
+    }
+
+    function editCategory($id_category){
+        $this->authHelper->checkLoggedIn();
+        if(isset($_POST['description'])){
+            $description = $_POST['description'];
+            $this->model->editCategory($description, $id_category);
+            header("Location: " . BASE_URL.'adminHome');
+        }else{
+            var_dump('Error: Falta ingresas datos'); 
+            die();
+        }
+        header("Location: " . BASE_URL.'adminHome');
+    }
     
 } 

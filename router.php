@@ -63,15 +63,27 @@ switch ($params[0]) {
     case 'delete':
         $id = $params[1];
         $productsController->deleteProduct($id);
+        break;    
+    case 'deleteCategory':
+        $id = $params[1];
+        $categoryController->deleteCategory($id);
         break;
-    case 'editForm':
+    case 'editFormProduct':
         $id = $params[1];
         $productsController->formEditProduct($id);
         break;
-    case 'edit':
+    case 'editFormCategory':
+        $id = $params[1];
+        $categoryController->formEditCategory($id);
+        break;
+    case 'editProduct':
         $id = $params[1];
         $productsController->editProduct($id);
-        break;    
+        break;
+    case 'editCategory':
+        $id = $params[1];
+        $categoryController->editCategory($id);
+        break;
     default:
         echo('404 Page not found');
         break;

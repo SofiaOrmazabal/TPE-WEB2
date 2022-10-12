@@ -23,8 +23,15 @@ class CategoryModel {
         $nameCategory = $query->fetch(PDO::FETCH_OBJ);
         return $nameCategory;
     }
+    function idCategory($id_category) {
+        
+        $query = $this->db->prepare("SELECT * FROM category WHERE id_category=?");
+        $query->execute(array($id_category));
+        $nameCategory = $query->fetch(PDO::FETCH_OBJ);
+        return $nameCategory;
+    }
     function insertCategory($description) {
-        $query = $this->db->prepare("INSERT INTO category (description) VALUES (?)");
+        $query = $this->db->prepare("INSERT INTO category (name) VALUES (?)");
         $params = array($description);
         $query->execute($params);
         return $this->db->lastInsertId();
@@ -34,7 +41,7 @@ class CategoryModel {
         $query->execute([$id_category]);
     }
     function editCategory($description, $id_category) {
-        $query = $this->db->prepare('UPDATE category SET description = ? WHERE id_category = ?');
+        $query = $this->db->prepare('UPDATE category SET name = ? WHERE id_category = ?');
         $params = array($description, $id_category);
         $query->execute($params);
     }

@@ -40,6 +40,7 @@ class ProductController {
         $category = $this->categoryModel->nameCategory($detail->id_category);
         $this->view->detailProduct($detail, $category);
     }
+    
     function productsFromCategory($id){
         $detail = $this->model-> productsFromCategory($id);
         $this->view->productsFromCategory($detail);
