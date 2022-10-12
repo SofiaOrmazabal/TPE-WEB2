@@ -8,6 +8,11 @@
         <label for="password">Ingrese contraseña</label><input type="password" name="password" placeholder="contraseña">
         <input type="submit" value="Login">
     </form>
+    {if $error} 
+        <div > 
+            {$error}
+        </div>
+    {/if}
 
     <a href="publicHome">Acceso público</a>
 </div>

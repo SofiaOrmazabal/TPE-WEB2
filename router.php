@@ -48,12 +48,18 @@ switch ($params[0]) {
     case 'viewcategory': 
         $productsController->productsFromCategory($params[1]);
         break;  
-    case 'insert': 
+    case 'insertproduct': 
         $productsController->insertProduct();
-        break;  
+        break;
+    case 'insertcategory': 
+        $categoryController->insertCategory();
+        break;      
     case 'showProductsAdmin':
         $productsController->showProductsAdmin();
-        break;                 
+        break; 
+    case 'showCategoriesAdmin':
+        $categoryController->showCategoriesAdmin();
+        break;    
     case 'delete':
         $id = $params[1];
         $productsController->deleteProduct($id);

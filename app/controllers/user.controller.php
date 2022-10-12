@@ -49,6 +49,7 @@ class UserController {
             $this->model->newAdmin($email, $password);
             $categories = $this->modelCategory->getAllCategories();
             $this->view->adminHome($categories);
+            $this->view->adminLogin();
         }   
         }
     
