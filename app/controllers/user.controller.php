@@ -7,6 +7,7 @@ require_once './app/helpers/AuthHelper.php';
 class UserController {
 
     private $model;
+    private $modelCategory;
     private $view;
     private $authHelper;
 

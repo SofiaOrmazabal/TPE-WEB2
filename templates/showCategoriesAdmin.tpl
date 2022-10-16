@@ -10,6 +10,9 @@
         {/foreach}
     </ul>
 
+
+    <p class="error">Recuerde que no podrá eliminar una categoria si tiene productos asociados, el sistema no lo permitirá </p>
+
     <a href="adminHome" > Volver atrás </a>
 </div>
 {include file="footer.tpl"}

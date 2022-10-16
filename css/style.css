@@ -27,7 +27,10 @@ a:hover{
     padding: 0.10cm;
     text-decoration: none;
 }
-
+.error{
+    color: red;
+    border: solid red;
+}
 form{
     margin: 1cm;
 }

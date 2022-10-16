@@ -13,7 +13,6 @@ class CategoryController {
         $this->view = new CategoryView();
         $this->authHelper = new AuthHelper();
     }
-
     function showCategories() {
         $categories = $this->model->getAllCategories();
         $this->view->showCategories($categories);
@@ -34,19 +33,23 @@ class CategoryController {
         $categories = $this->model->getAllCategories();
         $this->view->showCategoriesAdmin($categories);
     } 
-    
     function deleteCategory($id) {
         $this->authHelper->checkLoggedIn();
-        $this->model->deleteCategory($id);
-        header("Location: " . BASE_URL.'showCategoriesAdmin');
+        try{
+            $this->model->deleteCategory($id);
+            header("Location: " . BASE_URL.'showCategoriesAdmin');
+        }
+        catch (Exception $e){
+            $this->view->showCategoriesAdmin(var_dump($e));
+            header("Location: " . BASE_URL.'showCategoriesAdmin');
+        }
+        
     }
-    
     function formEditCategory($id) {
         $this->authHelper->checkLoggedIn();
         $detailCategory = $this->model->idCategory($id);
         $this->view->formEditCategory($detailCategory);
     }
-
     function editCategory($id_category){
         $this->authHelper->checkLoggedIn();
         if(isset($_POST['description'])){
@@ -59,5 +62,4 @@ class CategoryController {
         }
         header("Location: " . BASE_URL.'adminHome');
     }
-    
 } 
