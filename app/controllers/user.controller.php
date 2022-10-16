@@ -37,7 +37,7 @@ class UserController {
                 session_start();
                 $_SESSION["user"] = $email;
 
-                $this->view->adminLogin();//me tiene que redirigir a la parte que el admin puede editar
+                $this->view->adminLogin();
             } else {
                 $this->view->showLogin("Acceso denegado");
             }

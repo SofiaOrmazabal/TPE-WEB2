@@ -18,8 +18,6 @@ class ProductController {
     }
 
     function showProducts() {
-        //Pasar por parametro en la view $isAdmin. Me devuelve verdadero o falso
-        // $isAdmin = $this->authHelper->checkAdmin();
         $products = $this->model->getAllProducts();
         $this->view->showProducts($products);
     }

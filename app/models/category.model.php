@@ -20,7 +20,7 @@ class CategoryModel {
         
         $query = $this->db->prepare("SELECT name FROM category WHERE id_category=?");
         $query->execute(array($id_category));
-        $nameCategory = $query->fetch(PDO::FETCH_OBJ);
+        $nameCategory = $query->fetchAll(PDO::FETCH_OBJ);
         return $nameCategory;
     }
     function idCategory($id_category) {

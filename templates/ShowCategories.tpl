@@ -6,7 +6,7 @@
         {foreach from=$categories item=$category}
             <li>
                 {$category->name}<a class="linkVer" href="viewcategory/{$category->id_category}">VER MÁS</a>       
-            </li>
+            </li>   
         {/foreach}
     </ul>
 
